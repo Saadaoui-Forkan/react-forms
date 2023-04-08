@@ -67,9 +67,9 @@ form{
     border-bottom: 2px solid #d9d9d9;
 }
 
-/* .login-content .input-div.one{
+.login-content .input-div.one{
 	margin-top: 0;
-} */
+}
 
 .i{
 	color: #d9d9d9;
@@ -143,9 +143,9 @@ form{
 	font-family: 'poppins', sans-serif;
 }
 
-/* .input-div.pass{
+.input-div.pass{
 	margin-bottom: 4px;
-} */
+}
 
 a{
 	display: block;
@@ -179,6 +179,21 @@ a:hover{
 }
 .btn:hover{
 	background-position: right;
+}
+
+.error-wrap {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 50%;
+}
+
+.error {
+    background-color: rgb(207, 16, 16);
+    padding: 5px;
+    margin: 10px auto;
+    color: #fff;
+    font-size: 16px;
 }
 
 
@@ -218,5 +233,19 @@ a:hover{
 
 	.login-content{
 		justify-content: center;
+	}
+	.error-wrap {
+		width: 80%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.error-wrap {
+		width: 80%;
+	}
+	.error {
+		padding: 3px;
+		margin: 5px auto;
+		font-size: 14px;
 	}
 }
