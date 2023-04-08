@@ -5,7 +5,7 @@ const inputs = [
       name: 'username',
       iconClassName: 'fas fa-user',
       type: 'text',
-      wrapperClassName: 'input-div one',
+      wrapperClassName: 'input-div',
     },
     {
       id: 2,
@@ -13,7 +13,7 @@ const inputs = [
       name: 'email',
       iconClassName: 'fas fa-envelope',
       type: 'email',
-      wrapperClassName: 'input-div pass',
+      wrapperClassName: 'input-div',
     },
     {
       id: 3,
@@ -21,7 +21,7 @@ const inputs = [
       name: 'password',
       iconClassName: 'fas fa-lock',
       type: 'password',
-      wrapperClassName: 'input-div pass',
+      wrapperClassName: 'input-div',
     },
   ]
 

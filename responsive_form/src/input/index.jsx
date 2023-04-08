@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function FormInput(props) {
-    const { handleChange, focus, handleFocus, idx, ...inputProps} = props
+    const { handleChange, ...inputProps} = props
+    const [focused, setFocused] = useState(false)
+    const handleBlur = (e) => {
+      // console.log(e.target.value)
+      if (e.target.value === "") {
+        setFocused(false)
+      }
+    }
   return (
     <>
-        <div className={`${idx === inputProps.id && focus && 'focus'} ${inputProps.wrapperClassName}`}>
+        <div className={`${ focused && 'focus'} ${inputProps.wrapperClassName}`}>
             <div className="i">
               <i className={inputProps.iconClassName}></i>
             </div>
@@ -15,7 +22,8 @@ function FormInput(props) {
                 type = {inputProps.type} 
                 className = "input" 
                 onChange = {handleChange}
-                onFocus = {()=>handleFocus(inputProps.id)}
+                onFocus = {()=>setFocused(true)}
+                onBlur = {handleBlur}
               />
             </div>
         </div>
