@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import avatar from './img/avatar.svg'
 import bg from './img/bg.svg'
 import wave from './img/wave.png'
@@ -24,6 +24,10 @@ function App() {
   const password_regex = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$/;
   const email_regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+  const validated = () => {
+    alert('completed')
+  }
+
   const formValidation = () => {
     const validate = []
     if (!user_regex.test(values.username)) {
@@ -36,6 +40,9 @@ function App() {
       validate.push("Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!")
     }
     setValidate(validate)
+    if (validate.length === 0) {
+      validated();
+    }
   }
 
   const handleClick = (e) => {
@@ -45,7 +52,7 @@ function App() {
 
   return (
     <div className="App">
-      <img className="wave" src={wave}/>
+      <img className="wave" src={wave} alt='wave'/>
       <div className="container">
         <div className="img">
           <img src={bg} alt='bg' />
